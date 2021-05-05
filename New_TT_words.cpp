@@ -13,17 +13,16 @@
 using namespace std;
 
 #define NUM_THREADS 1
-#define DEBUG 1
+#define DEBUG 0
 
 mutex fmtx;
-mutex wmtx;
 
 bool comp(pair<string, int> a, pair<string, int> b)
 {
     return a.second > b.second;
 }
 
-// Read from file
+// Read from file and push words to unordered_map
 void processFile(ifstream &infile, unordered_map<string, int> &words, int numLines)
 {
     string line;
